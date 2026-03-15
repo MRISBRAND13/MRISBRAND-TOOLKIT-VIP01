@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MR IS BRAND TOOLKIT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://i.postimg.cc/9XxMCVLF/Screenshot-20250802-114226-3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #0ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+    .title-box {
+      background-color: black;
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 90%;
+    }
+    .title-box h1 {
+      font-size: 24px;
+      margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #00ffff;
+      text-align: center;
+    }
+    .toolkit-container {
+      background: rgba(0,0,0,0.85);
+      border: 3px solid #00ffff;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 360px;
+      border-radius: 15px;
+      text-align: center;
+      margin: 20px;
+      box-sizing: border-box;
+    }
+    .toolkit-container h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #0ff;
+      text-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
+    }
+    .toolkit-container a {
+      display: block;
+      margin: 15px 0;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      background: transparent;
+      color: #0ff;
+      border: 3px solid #00ffff;
+      border-radius: 12px;
+      text-decoration: none;
+      text-shadow: 0 0 20px #0ff;
+      box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff;
+      transition: all 0.3s ease;
+    }
+    .toolkit-container a:hover {
+      background: #0ff;
+      color: black;
+      box-shadow: 0 0 40px #0ff, 0 0 60px #00ffff;
+      transform: scale(1.05);
+    }
+    #lockscreen {
+      background: rgba(0,0,0,0.85);
+      border: 3px solid #00ffff;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 15px;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 20px;
+    }
+    #lockscreen h2, #special-msg {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    #special-msg {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #0ff;
+      text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 30px #00ffff,
+        0 0 40px #00ffff,
+        0 0 50px #00ffff;
+    }
+    #pass {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 16px;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      background: transparent;
+      color: #0ff;
+      outline: none;
+      margin-bottom: 10px;
+      box-shadow: 0 0 10px #0ff inset;
+      transition: 0.3s;
+      box-sizing: border-box;
+    }
+    #pass::placeholder {
+      color: #0ff;
+      opacity: 0.7;
+    }
+    #pass:focus {
+      border-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff inset;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      background: transparent;
+      color: #0ff;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      cursor: pointer;
+      text-shadow: 0 0 10px #0ff;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #0ff;
+      color: black;
+      box-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+      transform: scale(1.05);
+    }
+    #error {
+      margin-top: 10px;
+      color: #ff5555;
+      font-weight: 600;
+      min-height: 20px;
+    }
+    #hint {
+      font-size: 14px;
+      color: #0ff;
+      opacity: 0.7;
+      margin-bottom: 15px;
+      font-style: italic;
+      text-shadow: 0 0 5px #0ff;
+    }
+    #logout {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background: transparent;
+      color: #0ff;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0ff;
+    }
+    #logout:hover {
+      background: #0ff;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="lockscreen">
+    <div id="special-msg">
+      MR IS BRAND DEVELOPER<br><br>
+      Fuck Copy Pasters &#128527;
+    </div>
+    <h2>Enter Password to Access Toolkit</h2>
+    <input type="password" id="pass" placeholder="Enter password...">
+    <div id="hint">RulEs is NothiNg infroNt of Me</div>
+    <button onclick="checkPassword()">Access Toolkit</button>
+    <a href="https://mrisbrand-network-six.vercel.app/" target="_blank">
+      <button>Join Our Network</button>
+    </a>
+    <div id="error"></div>
+  </div>
+
+  <div id="toolkit" style="display:none;">
+    <div class="title-box">
+      <h1>WELCOME TO MR IS BRAND TOOLKIT</h1>
+    </div>
+    <div class="toolkit-container">
+      <h2>Available Tools</h2>
+    <a href="https://mrisbrand-intro.vercel.app/" class="button" target="_blank">
+      MY INTRO</a>
+    <a href="https://mrisbrand-services.vercel.app/" class="button" target="_blank">
+      PAID SERVICES</a>
+    <a href="https://www.mediafire.com/file/j9mx6oe2n6zaqre/Al+Quran+Kareem.apk/file" class="button" target="_blank">
+      QURAN PAK</a>
+    <a href="https://www.doctronic.ai" class="button" target="_blank">
+      DOCTOR AI</a>
+    <a href="https://wa.me/18002428478" class="button" target="_blank">
+      WATHSAPP CHAT GPT</a>
+    <a href="https://drive.google.com/drive/folders/1swdDOsqbYmKl7Ccxixq5Uzbepd7MCa39" class="button" target="_blank">
+      MY OWN FREE WHATSAPP MD BOT</a>
+    <a href="https://docs.google.com/document/d/10DpvFwM6H-cnVcdg9xSK5imSm0T9EwUeoOJ5yegOMHo/edit?usp=drivesdk" class="button" target="_blank">
+      NEW FRESH BAILEYS FOR WHATSAPP BOTS</a>
+    <a href="http://mrisbrand-web-hosting.page.gd/" class="button" target="_blank">
+      MY OWN FREE WEB HOSTING</a>
+    <a href="https://mrisbrand-database.vercel.app/" class="button" target="_blank">
+      MY OWN SIM DATABASE</a>
+    <a href="https://drive.google.com/drive/folders/16IypdRcHjzCBCPhfPivSSfmeynGm8Ute" class="button" target="_blank">
+      CHAT GPT 5 FREE</a>
+    <a href="https://docs.google.com/document/d/1dILc2TmCnhnA6uNokJpdJXG667FdrD4-IUgQCD3VngU/edit?usp=drivesdk" class="button" target="_blank">
+      CHAT GPT GO PRO PLAN</a>
+    <a href="https://drive.google.com/file/d/1qrNUYpbbI_9O7LdTzgNX75IcEmv3z4n5/view?usp=drivesdk" class="button" target="_blank">
+     UNLIMITED LEONARDO AI FREE COINS</a>
+    <a href="https://www.mediafire.com/file/9bdrtv6g6mtmjoz/ChatGPT+Premium_1.0.11.apk/file" class="button" target="_blank">
+     CHAT GPT PREMIUM APK</a>
+    <a href="https://liteapks.com/netflix-2.html" class="button" target="_blank">
+     NETFLIX PREMIUM</a>
+    <a href="https://www.mediafire.com/file/ep8skhavdtp9c7m/Youtube_5.3.80.132.apk/file" class="button" target="_blank">
+     YOUTUBE PREMIUM</a>
+    <a href="https://pool.apk.aptoide.com/repairmagicbutton/com-spotify-music-128453220-70780531-bb992f1929832f80ae85abee184d56ad.apk" class="button" target="_blank">
+     SPOTIFY PREMIUM APK</a>
+    <a href="https://www.mediafire.com/file/bvjmxhg5awx2jkh/YouTube_music_premium_by_MRISBRAND_%25F0%259F%2592%2580.apk/file" class="button" target="_blank">
+     YOUTUBE MUSIC PREMIUM</a>
+    <a href="https://www.mediafire.com/file/3dkqm3t565c6syc/TeraBox_3.27.1.apk/file" class="button" target="_blank">
+     TERABOX PREMIUM</a>
+    <a href="https://liteapks.com/snaptube.html" class="button" target="_blank">
+     SNAPTUBE PREMIUM</a>
+    <a href="https://liteapks.com/vidmate.html" class="button" target="_blank">
+     VIDMATE PREMIUM</a>
+    <a href="https://liteapks.com/twitter.html" class="button" target="_blank">
+     X (TWITTER) PREMIUM UNLOCKED</a>
+    <a href="https://www.mediafire.com/file/7v8ayo7qcito16u/CRICFy+TV_5.0.apk/file" class="button" target="_blank">
+     CRICFY TV PREMIUM</a>
+    <a href="https://www.mediafire.com/file/aigmux8s9bepzxf/TELEGRAM_MODDED.apk/file" class="button" target="_blank">
+     TELEGRAM PREMIUM</a>
+    <a href="https://www.mediafire.com/file/m4jyh9lk4fbgndu/Wink_2.13.0.apk/file" class="button" target="_blank">
+     WINK PREMIUM</a>
+    <a href="https://liteapks.com/app-manager.html" class="button" target="_blank">
+     APP MANAGER PREMIUM UNLOCKED</a>
+    <a href="https://liteapks.com/multi-clone.html" class="button" target="_blank">
+     MULTI CLONE PARALLEL SPACE PREMIUM</a>
+    <a href="https://liteapks.com/thunder-vpn.html" class="button" target="_blank">
+     THUNDER VPN PREMIUM UNLOCKED</a>
+    <a href="https://liteapks.com/1-1-1-1.html" class="button" target="_blank">
+     WRAP VPN (1.1.1.1) PREMIUM UNLOCKED</a>
+    <a href="https://liteapks.com/super-vpn-stable-fast-vpn.html" class="button" target="_blank">
+     SUPER VPN PREMIUM UNLOCKED</a>
+    <a href="https://www.mediafire.com/file/ajfga9ukrgglwul/CapCut_14.4.0.apk/file" class="button" target="_blank">
+     CAPCUT PRO FOR ANDROID &amp; PC</a>
+    <a href="https://www.mediafire.com/file/uew2v6q8yqa38d6/" class="button" target="_blank">
+     KINEMASTER PRO APK</a>
+    <a href="https://www.mediafire.com/file/bjgg3kx4s06y3m5/PICSART_PRO_BY_DARK_LEGEND.apk/file" class="button" target="_blank">
+    PICSART PRO APK</a>
+    <a href="https://www.mediafire.com/file/kz675v9ikmn223v/PLAYit_2.7.15.3.apk/file" class="button" target="_blank">
+     PLAY IT PRO APK</a>
+    <a href="https://liteapks.com/shareit-transfer-share-files.html" class="button" target="_blank">
+     SHARIT PRO APK</a>
+    <a href="https://liteapks.com/anti-spy-4-scanner-spyware.html" class="button" target="_blank">
+     ANTI SPY SCANNER PRO</a>
+    <a href="https://liteapks.com/root-checker-pro.html" class="button" target="_blank">
+     ROOT CHECKER PRO</a>
+    <a href="https://www.mediafire.com/file/jiyv52a343qmbtj/InShot_2.152.1504.apk/file" class="button" target="_blank">
+     INSHOT MOD APK</a>
+    <a href="https://www.mediafire.com/file/4y39j5lx12mfjlp/Cute_CUT_Video_Editor_and_Movie_Maker_Pro_v1.8.8.apk/file" class="button" target="_blank">
+     CUTECUT MOD APK</a>
+    <a href="https://www.mediafire.com/file/uikh4h33bw04561/Pixaloop_pro.apk/file" class="button" target="_blank">
+     PIXALLOOP MOD APK</a>
+    <a href="https://www.mediafire.com/file/43yirqvtaimlq70/PixelLab_By_Telugu_Tech_Icon.apk/file" class="button" target="_blank">
+     PIXAL LAB MOD APK</a>
+    <a href="https://www.mediafire.com/file/1nhthm5kt7wg0es/Remini_3.7.1020.202514479.apk/file" class="button" target="_blank">
+     REMINI MOD APK</a>
+    <a href="https://www.mediafire.com/file/b736y30nsfv7ajh/MODE+ANY+APPS+GAMES+METHOD.zip/file" class="button" target="_blank">
+     MOD ANY APK</a>
+    <a href="https://www.mediafire.com/file/0870qd38lw6j54w/Insta_Hack_BY_%25F0%2593%2586%25A9%25F0%259D%2590%2580%25F0%259D%2590%258B%25F0%259D%2590%2588%25F0%259D%2590%25B1%25F0%259D%2590%2591%25F0%259D%2590%258E%25F0%259D%2590%2598%25F0%259D%2590%2580%25F0%259D%2590%258B%25F0%2593%2586%25AA__.7z/file" class="button" target="_blank">
+     HACK INSTAGRAM</a>
+    <a href="https://www.mediafire.com/file_premium/vfsmk9dnxvbwneg/See_private.apk/file" class="button" target="_blank">
+     SEE PRIVATE INSTA</a>
+    <a href="https://account.st/facebook/" class="button" target="_blank">
+     FACEBOOK HACK METHOD 01</a>
+    <a href="https://www.mediafire.com/file/d1rrrye4q3ksn23/FACEBOOK_HACK.zip/file" class="button" target="_blank">
+     FACEBOOK HACK METHOD 02 IF DOESN'T OPEN USE MT MANAGER</a>
+    <a href="https://drive.google.com/drive/folders/1aA05NHBRIo6hI34NzQMs8kYX5xh9tcMP" class="button" target="_blank">
+     HACK INSTAGRAM & FACEBOOK USING TERMUX</a>
+    <a href="https://t.me/MRISBRAND804/5" class="button" target="_blank">
+     TIKTOK HACK</a>
+    <a href="https://drive.google.com/drive/folders/1z5E6vXkctkyM2whJNcMTl0pFNCUZynTs" class="button" target="_blank">
+     TIKTOK HACK WITH LINK</a>
+    <a href="https://www.mediafire.com/file/cyq74z81jq46nh2/Live_Camera.apk/file" class="button" target="_blank">
+     HIDDEN CAMERA HACK</a>
+    <a href="https://drive.google.com/drive/folders/1Z-SjxeB0Vt6bTniwJTltb4tCRXpr7qok" class="button" target="_blank">
+     WIFI HACK THROUGH TERMUX</a>
+    <a href="https://www.mediafire.com/file/il64l4ov4oi1txf/WHATSAPP_HACK_NEW_METHOD.zip/file" class="button" target="_blank">
+     WATHSAPP CHAT HACK</a>
+    <a href="https://www.mediafire.com/file/ifxvks1slvqfgj8/LIVE_SCREEN_HACK.zip/file" class="button" target="_blank">
+     LIVE SCREEN HACK</a> 
+    <a href="https://www.mediafire.com/file/rh6tmls4w1i2csw/GALLERY-HACK-USING-LINK_MRISBRAND.zip/file" class="button" target="_blank">
+     GALLERY HACK USING LINK</a> 
+    <a href="https://www.mediafire.com/file/tv2zxzcwl547le3/Jazz_cash_payment_Sms_099/file" class="button" target="_blank">
+     JAZZCASH FAKE PAYMENT SMS HACK</a>
+    <a href="https://www.mediafire.com/file/muxnfrta2y8dyq2/Modify_Any_Apk_LEAKED_By_AbheeBhai_Mods.zip/file" class="button" target="_blank">
+     HACK ANY APK FREE</a>
+    <a href="https://drive.google.com/drive/folders/1ZVkWQyb684Pz2d7VeKS6WJ3EE_lEdcr6" class="button" target="_blank">
+     ALL SOCIAL MEDIA HACKING METHOD</a>
+    <a href="https://drive.google.com/drive/folders/11njJcZ9nCY78Pks-BDIaY3oJsqwIKFfW" class="button" target="_blank">
+     WATHSAPP FULL HACK METHOD</a>
+    <a href="https://mrisbrand-whatsapp-hack-tool.vercel.app/" class="button" target="_blank">
+     WATHSAPP FULL HACK THROUGH TERMUX</a>
+    <a href="https://drive.google.com/drive/folders/1SspV2hZtxPB11RPPK517E9BuWKYa-thM" class="button" target="_blank">
+     WATHSAPP FULL HACK THROUGH LINK</a>
+    <a href="https://www.mediafire.com/file/qtf5f92y5hxh5hs/%25C6%2592%25C5%2597z_w%25D1%2592%25C4%2581%25C5%25A3%25C5%259F%25C4%2581pp_2.24.16.76.apk/file" class="button" target="_blank">
+     WATHSAPP JAMMER</a>
+    <a href="https://drive.google.com/drive/folders/1hJD5m3-EZn7ML2P-VLRTlbN51KAzhGEh?usp=sharing" class="button" target="_blank">
+     WATCH LAST SEEN OF ANY WATHSAPP ACC</a>
+    <a href="https://www.mediafire.com/file/kbxiveyra3lfegj/Status_Saver_1.0.apk/file" class="button" target="_blank">
+     WATHSAPP AUTO STATUS SAVER</a>
+      <a href="https://drive.google.com/drive/folders/1DPRVhMdwvtlHJZF5vUJY-uemUB8ayn78" class="button" target="_blank">
+     WHATSAPP META VERIFIED METHOD</a>
+    <a href="https://docs.google.com/document/d/1AU3ZCXF_IzE5w35P1B857wCPm6vehhunPnEivwTNkyc/edit?usp=drivesdk" class="button" target="_blank">
+     HOW TO UNBLOCK YOURSELF FROM SOMEONE WATHSAPP WITHOUT HIS PERMISSION</a>
+    <a href="https://liteapks.com/whatsdelete-recover-messages.html" class="button" target="_blank">
+     WATHSAPP DELETE MESSAGES RECOVERY</a>
+    <a href="https://www.mediafire.com/file/d4xfxfjq5vheqb5/HOW+TO+CALL+ANYONE+WITHOUT+SHOWING+YOUR+NUMBER+BY+MRISBRAND.zip/file" class="button" target="_blank">
+     HOW TO CALL ANYONE WITHOUT SHOWING YOUR NUMBER</a>
+    <a href="https://www.mediafire.com/file/36kzhdantt1i1x4/WHITE-DEVIL_SPAM_APK_%25F0%259F%2592%2580%25E2%259A%2594_1.2.apk/file" class="button" target="_blank">
+     WATHSAPP SPAM</a>
+    <a href="https://www.mediafire.com/folder/akg6md1bu1l38/%F0%9D%98%BE%F0%9D%99%9D%F0%9D%99%9A%F0%9D%99%96%F0%9D%99%A0+%F0%9D%99%88%F0%9D%99%A4%F0%9D%99%97%F0%9D%99%9E%F0%9D%99%A1%F0%9D%99%9A+%F0%9D%99%AC%F0%9D%99%9E%F0%9D%99%A9%F0%9D%99%9D+%F0%9D%99%A3%F0%9D%99%AA%F0%9D%99%A2%F0%9D%99%97%F0%9D%99%9A%F0%9D%99%A7" class="button" target="_blank">
+     CHECK ANYONE MOBILE MODEL WITH ONLY HIS WATHSAPP NUMBER TRICK</a>
+    <a href="https://www.mediafire.com/folder/efn5h9akkp0sr/Truest+wallet+coin" class="button" target="_blank">
+     TRUST WALLET MONEY &amp; ACCOUNT HACK</a>
+    <a href="https://www.mediafire.com/file/tz1q4tl8rbyotel/FULL+MOBILE+HACK+BY+MRISBRAND.zip/file" class="button" target="_blank">
+     NEW MOBILE HACK RAT 2025</a>
+    <a href="https://pixeldrain.com/u/dvtgs6Ka" class="button" target="_blank">
+     HACK PHONES &amp; COMPUTERS USING A LINK &#128279;</a>
+      <a href="https://drive.google.com/drive/folders/1gtheoMChRhI-rLxcgnACX9CQehPSWH2Z" class="button" target="_blank">
+     CRASH PHONE USING A LINK</a>
+    <a href="https://f-droid.org/repo/com.termux_1022.apk" class="button" target="_blank">
+     TERMUX UPDATE</a>
+    <a href="https://drive.google.com/drive/folders/1XHhoyqqwKlgnkqZjGMYYTWTjMygvx2t4" class="button" target="_blank">
+     TELEGRAM SMS FEE PROBLEM SOLVED</a>
+    <a href="https://drive.google.com/drive/folders/1ZVkWQyb684Pz2d7VeKS6WJ3EE_lEdcr6" class="button" target="_blank">
+     ALL SOCIAL MEDIA PISHING LINKS</a>
+    <a href="https://www.mediafire.com/file/ggd6xnqo4lu2bf0/MAKE_GAMES_PHISING_LINK_IN_FREE_FROM_ABHEEBHAI_MODS.zip/file" class="button" target="_blank">
+     GAME PHISHING MAKER</a>
+    <a href="https://drive.google.com/drive/folders/1WLoWad2914ZsIdXEkgrH9jcETI-do9fh" class="button" target="_blank">
+     WHATSAPP BAN METHOD</a>
+    <a href="https://www.mediafire.com/file/ndh449c4mw5swjb/WHATSAPP+UNBAN+METHOD+BY+MRISBRAND.zip/file" class="button" target="_blank">
+     WHATSAPP UNBAN METHOD</a>
+    <a href="https://mrisbrand-whatsapp-unban-tools01.vercel.app/" class="button" target="_blank">
+     WATHSAPP UNBAN TOOLS</a>
+    <a href="https://drive.google.com/drive/folders/1ewLVSIf_UJgwkGtfjAC1OABde3H4-C5R" class="button" target="_blank">
+     UNBAN PUBG 10 YEARS BAN ACCOUNT</a>
+    <a href="https://www.mediafire.com/file/o83fu9y9q3056e5/HOW_TO_BAN_INSTAGRAM_ID_PERMANENT_BAN_BY_MRISBRAND_.7z.zip/file" class="button" target="_blank">
+     INSTAGRAM BAN</a>
+    <a href="https://www.mediafire.com/file/iq0n9n3palba8c8/FACEBOOK-BAN-METHOD-BY_MRISBRAND.zip/file" class="button" target="_blank">
+     FACEBOOK BAN</a>
+    <a href="https://www.mediafire.com/file/88jtpldnizl7siy/TIKTOK_BAN_METHOD.txt/file" class="button" target="_blank">
+     TIKTOK BAN</a>
+    <a href="https://www.mediafire.com/file/2einie8zjanp3c2/TIKTOK+VIDEO+REMOVED+BY+MRISBRAND.zip/file" class="button" target="_blank">
+     HOW TO REMOVE ANY TIKTOK VIDEO & ADS</a>
+    <a href="https://www.mediafire.com/file/i6iyt3yue1l7vve/WHATSAPP_CHANNEL_BAN_METHOD_NEW_WORKING_%25F0%259F%2592%25AF_METHOD_BY_PROxARMY_TEAM.zip/file" class="button" target="_blank">
+     WATHSAPP CHANNEL BAN METHOD</a>
+    <a href="https://filesadmin.com/ccc716dd05d2743d/WhatsApp_Otp_lock_Method.zip" class="button" target="_blank">
+     WATHSAPP OTP LOCK METHOD</a>
+    <a href="https://www.mediafire.com/file/rrnfi1jgaeuxi4l/%25F0%259D%2590%258E%25F0%259D%2590%2593%25F0%259D%2590%258F_%25F0%259D%2590%2587%25F0%259D%2590%2580%25F0%259D%2590%2582%25F0%259D%2590%258A.zip/file" class="button" target="_blank">
+     ALL OTP HACK</a>
+    <a href="https://www.mediafire.com/file/0djv4crwhzwsu3n/WhatsApp_Bot_Activation_By_SAFI.mp4/file" class="button" target="_blank">
+     WATHSAPP BUG BOT</a>
+    <a href="https://www.mediafire.com/file/bkdit2b2ia73hp0/Trading_Signals_Free_By_AbheeBhai_Mods.rar/file" class="button" target="_blank">
+     FREE TRADING SIGNALS BOT</a>
+    <a href="https://oterg.com/pages/login/register?promo_code=366F012F" class="button" target="_blank">
+     FREE EARNINGS SITE</a>
+    <a href="https://www.mediafire.com/file/ua3grks0dz5h0hh/gallery+crash.zip/file" class="button" target="_blank">
+     GALLERY CRASH APK</a>
+    <a href="https://www.mediafire.com/file/iyngfbomye8axh3/Android+reset+.apk/file" class="button" target="_blank">
+     ANDROID VIRUS APK</a>
+    <a href="https://www.mediafire.com/file/kkk6l40duq1sxg3/WhatsApp_1.0.apk/file" class="button" target="_blank">
+     PHONE DEAD VIRUS APK</a>
+    <a href="https://drive.google.com/drive/folders/1579kmWC3_ufJuVeAGKgYM_VTVwL8J2Ky" class="button" target="_blank">
+     MOBILE LOCK VIRUS APK</a>
+    <a href="https://www.mediafire.com/file/4qrvq9r98lq8xkc/Delete+everything+virus.apk/file" class="button" target="_blank">
+     DELETE EVERYTHING APK</a>
+    <a href="https://www.mediafire.com/folder/hdp5skctyh72p/X+Hunter+Method" class="button" target="_blank">
+     X HUNTER WORKING METHOD</a>  
+    <a href="https://www.mediafire.com/folder/mpqbz6hp9c8eb/D+dos+attack+On+website" class="button" target="_blank">
+     D,DOS ATTACKER SHUTDOWN ANY WEB 01</a>
+    <a href="https://www.mediafire.com/file/x9izx18os0h2tm3/DDOS_ATTACKER_1.1.apk/file" class="button" target="_blank">
+     D,DOS ATTACKER SHUTDOWN ANY WEB 02</a>
+    <a href="https://drive.google.com/drive/folders/1RwKVCwSlQ38eMMym4fYMlqFpLA1MV643" class="button" target="_blank">
+     MAKE UNLIMITED GMAILS WITHOUT NUMBER</a>
+    <a href="https://www.mediafire.com/file/n1wf7cqfqynlbum/How_to_Recover_Gmail_Account_without_Verification_Code_Password_Phone_Number_2025%2528360P%2529.mp4/file" class="button" target="_blank">
+     HOW TO RECOVER GMAILS</a> 
+    <a href="https://play.google.com/store/apps/details?id=text.to.video.aivideo.generator" class="button" target="_blank">
+     HOW TO MAKE AI VIDEO'S</a> 
+    <a href="https://www.mediafire.com/file/ws4kaxgmze3z472/FREE+GOOGLE+VEO3+METHOD+BY+MRISBRAND+.zip/file" class="button" target="_blank">
+     FREE GOOGLE VEO3 METHOD</a> 
+    <a href="https://www.mediafire.com/file/eih6rex1zv9hw0n/HEADSHOT_FILE_BY_SASUKE.zip/file" class="button" target="_blank">
+     FREE FIRE HEADSHOT FILE</a>
+    <a href="https://sub2unlock.me/cqcVwHg" class="button" target="_blank">
+     FREE FIRE PANNEL</a>
+    <a href="https://www.mediafire.com/file_premium/y8zw457s99r7hj5/GTA_VC_v1.72.42919648_-_espacioapk.com.apk/file" class="button" target="_blank">
+     GTA VOICE CITY</a>
+    <a href="https://drive.google.com/drive/folders/17lmO2Ea98T6QfPCfsdt1Ed25wXrrvOmr" class="button" target="_blank">
+     HOW TO INSTALL GTA VICE CITY IN MOBILE</a>
+    <a href="https://www.mediafire.com/file/rfgf23ovkwgw2c1/Rdp_Tutorial_%252B_Files.zip/file" class="button" target="_blank">
+     FREE RDP &amp; VPS FOR PANNEL</a>
+    <a href="https://www.mediafire.com/file/numvfv1ku9qod7f/You_can_get_your_Mobile_PTA_Approved_by_Yourself_Trick_from_SMT_TEAM%25E2%259C%2593_.mp4/file" class="button" target="_blank">
+     NON PTA MOBILE TO PTA</a>
+    <a href="https://drive.google.com/drive/folders/1h0dTEo8_Hqp0V-o-ck8EsRikBsonpKlK" class="button" target="_blank">
+     HOW TO ROOT ANY PHONE</a> 
+    <a href="https://sub4unlock.com/SL/1700180" class="button" target="_blank">
+     CONVERT ANDROID TO IPHONE LATTEST METHOD</a>
+    <a href="https://teletype.in/@encryptedj/ga_dviNH50O" class="button" target="_blank">
+     HOW TO REACTIVATE WATHSAPP BANNED NUMBER IN 48 HOURS</a>
+    <a href="https://www.mediafire.com/file/mzur7k1xx56zokt/UNOFFICIAL_PROBLEM_FIX.txt/file" class="button" target="_blank">
+      UNOFFICIAL WATHSAPP LOGIN PROBLEM SOLVE</a>
+    <a href="https://www.mediafire.com/file/x871rqnd1uo9elb/UNKOWNSACALLKROUNLIMITEDMETHODBYJADOON.zip/file" class="button" target="_blank">
+     HOW TO CALL ANYONE WITHOUT BALANCE WITHOUT SHOWING NUMBER</a>
+    <a href="https://play.google.com/store/apps/details?id=bb_app.com.bots.business" class="button" target="_blank">
+     HOW TO CREATE YOUR OWN TELEGRAM BOT</a>
+    <a href="https://www.mediafire.com/file/bssqtg506j1pk7e/UNLIMITED_TELEGRAM_MEMBERS_ADDER.7z/file" class="button" target="_blank">
+     TELEGRAM UNLIMITED MEMBERS ADDER</a>
+    <a href="https://www.mediafire.com/folder/lloak8ckngeyu/Unlock+Fb+Method" class="button" target="_blank">
+     FACEBOOK UNLOCK METHOD</a>
+    <a href="https://www.mediafire.com/file/xkq5otmvhlepnzv/FB_STYLISH_NAME_BY_FK_HACKER.7z/file" class="button" target="_blank">
+     FACEBOOK STYLISH NAME TRICK</a>
+    <a href="https://www.mediafire.com/file/21bljiq1y3n72pe/FACEBOOK+BLUE+TICK+FREE+METHOD+BY+MRISBRAND+.zip/file" class="button" target="_blank">
+     FACEBOOK BLUE TICK FOR FREE</a>
+    <a href="https://drive.google.com/file/d/0BwPigoD17SIqMXhRamFMMV9fVkk/view?resourcekey=0-4bcD1FvgA6u07YdqPVzNDQ" class="button" target="_blank">
+     INTERNET DOWNLOAD MANAGER</a>
+    <a href="https://www.mediafire.com/folder/r01749bcfuygl/Track_Mobile" class="button" target="_blank">
+     TRACE ANY MOBILE</a>
+    <a href="https://www.mediafire.com/file/f9pziak22eonjrm/HOW_TO_FIND_ANYONE_LOCATION_TRACK_WITH_OWN_MOBILE_PHONE.zip/file" class="button" target="_blank">
+     TRACE LOCATION</a>
+    <a href="https://www.mediafire.com/file/ujak3pdww6srze4/Fake+Text+Message_5.2.apk/file5F0%259D%2599%25B4%25F0%259D%259A%2587%25F0%259D%259A%2583_%25F0%259D%2599%25BC%25F0%259D%2599%25B4%25F0%259D%259A%2582%25F0%259D%259A%2582%25F0%259D%2599%25B0%25F0%259D%2599%25B6%25F0%259D%2599%25B4_%25F0%259D%2599%25B6%25F0%259D%2599%25B4%25F0%259D%2599%25BD_%25F0%259D%2599%25B1%25F0%259D%259A%2588_%25C2%25A9_%25F0%259D%259A%2589%25F0%259D%2599%25B4%25F0%259D%259A%2581%25F0%259D%2599%25BE%25F0%259D%259A%2587/file" class="button" target="_blank">
+     FAKE SMS GENERATOR</a>
+    <a href="https://fitroom.app" class="button" target="_blank">
+     AI CLOTHES CHANGER</a>
+    <a href="https://www.mediafire.com/file/d4zsedauucyi947/Mask_%2526_Cloth_Remover.apk/file" class="button" target="_blank">
+     CLOTHES &amp; MASK REMOVER</a>
+    <a href="https://drive.google.com/drive/folders/1Cgo0g6nl2RbM6e-iuE8l4WKe_32Xf40l" class="button" target="_blank">
+     NEW +49 FAKE NUMBERS WORKING METHOD</a>
+    <a href="https://t.me/Nun_SMSbot?start=7463354069 " class="button" target="_blank">
+     FAKE NUMBERS WORKING TELEGRAM BOT</a>
+    <a href="https://www.mediafire.com/file/u4wqk8cmq1sggfv/OWN_AI_CHAT_GPT_V4_TELEGRAM_BOT_MAKING.zip/file" class="button" target="_blank">
+     OWN AI CHAT GPT MAKING METHOD</a>
+    <a href="https://www.mediafire.com/file/vmh2efktk4odm3d/base-3.apk/file" class="button" target="_blank">
+     WATHSAPP FAKE CHAT APK</a>
+    <a href="https://www.mediafire.com/file/5eme3a9ddhi6u80/TG_Fake_Chat.apk/file" class="button" target="_blank">
+     TELEGRAM FAKE CHAT APK</a>
+    <a href="https://www.mediafire.com/folder/7938xv2pb587j/Fake+chat+sociel+media(2)" class="button" target="_blank">
+     ALL SOCIAL MEDIA FAKE CHAT APK</a>
+    <a href="https://www.mediafire.com/file/1osfo0tcwmaj0ea/TikTok_36.4.5.apk/file" class="button" target="_blank">
+     TIKTOK LIVE APK</a>
+    <a href="https://drive.google.com/file/d/1XUfR8LP8MPkBp5Kr1dOaHMpIKnryzEat/view" class="button" target="_blank">
+     TIKTOK FOR YOU TRICK</a>
+    <a href="https://www.mediafire.com/file/rvirmsr0qak96o2/tiktok_100likes_daily.zip/file" class="button" target="_blank">
+     TIKTOK 100 LIKES DAILY</a>
+    <a href="https://zefoy.com/" class="button" target="_blank">
+     TIKTOK VIEWS TRICK</a>
+    <a href="https://www.mediafire.com/file/9s5kwb6h32jp0h2/TikTok_Booster.apk/file" class="button" target="_blank">
+     TIKTOK ACCOUNT BOOSTER</a>
+    <a href="https://mrisbrand-tiktok-video-downloader01.vercel.app/" class="button" target="_blank">
+     TIKTOK VIDEO DOWNLOADER</a>
+    <a href="https://drive.google.com/drive/folders/16l-lklZjwJcE-pzOano-b3To-uPCKxaC" class="button" target="_blank">
+     TIKTOK UK & USA ACCOUNT METHOD</a>
+    <a href="https://play.google.com/store/apps/details?id=com.pixverseai.pixverse/" class="button" target="_blank">
+     PUNCH ON FACE TEMPLATE</a>
+    <a href="https://nakrutka.com/my/freelikes.php?psc=C5NgfSZR4dN&amp;p=" class="button" target="_blank">
+     INSTAGRAM FREE LIKES</a>
+    <a href="https://drive.google.com/file/d/1xXxASmy1HEbS2Og4L7UOiEak2lmwWhTQ/view" class="button" target="_blank">
+     EASYPAISA BIOMETRIC BYPASS APK</a>
+    <a href="https://www.mediafire.com/file/x8qd0srq8tspy64/JazzCash_9.0.99.apk/file" class="button" target="_blank">
+     JAZZCASH BIOMETRIC BYPASS APK</a>
+    <a href="https://www.mediafire.com/file/ti8j7bgzopccchd/AutoSaveContact+WhatsApp+Anbu(1).zip/file" class="button" target="_blank">
+     AUTO SAVE CONTACT APK</a>
+    <a href="https://www.mediafire.com/file/h9fonbmc5ugaf9i/base-1.apk/file" class="button" target="_blank">
+     FAKE TRADING SCREENSHOT</a>
+    <a href="https://www.mediafire.com/file/fp8ualjy5on6n5b/EasyPaisa+Recipt_3.0.apk/file" class="button" target="_blank">
+     EASYPAISA ANIMATION APK</a>
+    <a href="https://www.mediafire.com/file/hxd3qczg08l1o6z/EasyPaisa+screenshot+real_3.0.apk/file" class="button" target="_blank">
+     EASYPAISA REAL SCREENSHOT APK</a>
+    <a href="https://www.mediafire.com/file/u29u3okyigjprdn/EasyPaisa+History_3.0.apk/file" class="button" target="_blank">
+     EASYPAISA FAKE HISTORY APK</a>
+    <a href="https://www.mediafire.com/file/oolzaitch0glaw5/JazzCash+receipt_1.0.apk/file" class="button" target="_blank">
+     JAZZCASH ANIMATION APK</a>
+    <a href="https://www.mediafire.com/file/gxnd696kjnldn7n/Jazz_Cash_Screenshot_by_kinghats.apk/file" class="button" target="_blank">
+     REAL JAZZCASH SCREENSHOT APK</a>
+    <a href="https://www.mediafire.com/file/n7mwjbx5lvqjgvt/EasyPaisa+to+Bank_3.0.apk/file" class="button" target="_blank">
+     EASYPAISA TO ALL BANK FAKE SCREENSHOT</a>
+    <a href="https://drive.google.com/file/d/179ygjrGTb1FKd-G3sKbTGeiD4UVyc8to/view" class="button" target="_blank">
+     FACEBOOK WATCH TIME METHOD</a>
+    <a href="https://mrisbrand-youtube-views-tools01.vercel.app/" class="button" target="_blank">
+     YOUTUBE UNLIMITED WATCH TIME METHOD</a>
+    <a href="https://v.wayin.ai" class="button" target="_blank">
+     YUTUBE SHORTS MAKER</a>
+    <a href="https://www.mediafire.com/file/giqvag6hg4e9l3l/%25F0%259D%2597%25AC%25F0%259D%2597%25A7_%25F0%259D%2597%25A7%25F0%259D%2597%259C%25F0%259D%2597%25A7%25F0%259D%2597%259F%25F0%259D%2597%2598%2526%25F0%259D%2597%2597%25F0%259D%2597%259C%25F0%259D%2597%25A6_%25F0%259D%2597%2596%25F0%259D%2597%25A2%25F0%259D%2597%25A3%25F0%259D%2597%25AC%25F0%259D%2597%2598%25F0%259D%2597%25A5_%25F0%259D%2597%25A7%25F0%259D%2597%25A2%25F0%259D%2597%25A2%25F0%259D%2597%259F_1.0.apk/file" class="button" target="_blank">
+     YOUTUBE TITLE &amp; DESCRIPTION COPY</a>
+    <a href="https://drive.google.com/drive/folders/1Vx_A3vn_wEvoRgiPCbs8tembzqCCuWws" class="button" target="_blank">
+     UNLIMITED TIKTOK & YOUTUBE LIKES & FOLLOWERS</a>
+    <a href="https://www.webintoapp.com/" class="button" target="_blank">
+     WEB TO APK MAKER</a>
+    <a href="https://sub4unlock.me/6a117" class="button" target="_blank">
+     GIRLS VOICE CHANGER</a>
+    <a href="https://35-powerful-ai-tools.vercel.app/" class="button" target="_blank">
+     AI TOOLS TO BOOST PRODUCTIVITY</a>
+    <a href="https://fonts.google.com/" class="button" target="_blank">
+     FONTS DOWNLOADER</a>
+    <a href="https://www.mediafire.com/file/gna1ub9930w24mu/2999%252B_Font_Pixellab.7z/file" class="button" target="_blank">
+     2999k+ PIXELLAB FONTS</a>
+    <a href="https://www.mediafire.com/file/j859pls52cgss4n/1000.zip/file" class="button" target="_blank">
+     1k+ LIGHTROOM PRESENTS</a>
+    <a href="https://drive.google.com/drive/folders/1q32k52X8637njif_VhY1UT78dBj0LrpM" class="button" target="_blank">
+     HOW TO MAKE PROFESSIONAL IMAGES</a>
+    <a href="https://www.mediafire.com/folder/8u922zsj9ms5p/Unlimited+Snapchat+score" class="button" target="_blank">
+     UNLIMITED SNAP SCORES</a>
+    <a href="https://www.mediafire.com/file/4uilo0jt8s3oart/Clone_Any_Website_Trick_By_AbheBhai.rar/file" class="button" target="_blank">
+     CLONE ANY WEBSITE</a>
+    <a href="https://www.mediafire.com/file/xl2edvf652i4mnw/Temp_Mail.apk/file" class="button" target="_blank">
+     TEMP MAIL APK</a>
+    <a href="https://www.imei.info/" class="button" target="_blank">
+     IME CHECK</a>
+    <a href="https://idcards.pw/" class="button" target="_blank">
+     FAKE CNIC MAKER</a>
+    <a href="https://grabify.link/track/HY9HN8" class="button" target="_blank">
+     DEVICE INFORMATION</a>
+    <a href="https://nims.nadra.gov.pk/nims/" class="button" target="_blank">
+     COVID 19 CHECK</a>
+    <a href="https://excise.gos.pk/" class="button" target="_blank">
+     PUNJAB VEHICLE CHECK</a>
+    <a href="https://vehicleverification.pk/" class="button" target="_blank">
+     SINDH VEHICLE CHECK</a>
+    <a href="https://www.kpexcise.gov.pk/" class="button" target="_blank">
+     KPK VEHICLE CHECK</a>
+    <a href="https://dlims.punjab.gov.pk/verify/" class="button" target="_blank">
+     DLMIS PUNJAB VERIFICATION</a>
+    <a href="https://dls.gos.pk/" class="button" target="_blank">
+     DLMIS SINDH CHECK</a>
+    <a href="https://dlimskpk-gov.com/" class="button" target="_blank">
+     DLMIS KPK VERIFICATION</a>
+    <a href="https://drive.google.com/drive/folders/1qMliRd7GNJEchgX1vd59385Re5maNVbk" class="button" target="_blank">
+     WORLD SIM INFO</a>
+    <a href="https://psafe.zendesk.com/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBvQbV8BBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJtvhLQEBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJQL2hjL2VuLXVzL2FydGljbGVzLzQ0MDM5NDI1MTA2MTktQ2hlY2stU3VzcGljaW91cy1MaW5rcy13aXRoLWRmbmRyLXNlY3VyaXR5BjsIVDoJcmFua2kG--3e3477569c701b39df9fda8901e848bc8dcf2699" class="button" target="_blank">
+     LINK SCAM CHECKER</a>
+    <a href="https://checkbill.pk/" class="button" target="_blank">
+     ALL BILLS CHECK ONLINE</a>
+    <a href="https://liteapks.com/speedchecker.html" class="button" target="_blank">
+     NETWORK SPEED CHECKER</a>
+    <a href="https://drive.google.com/drive/folders/1aR2sF6CkRq30PJBtkusUQ5EuKzDMY3AB" class="button" target="_blank">
+     CONVERT QUOTEX DEMO ACCOUNT TO LIVE ACCOUNT</a>
+    <a href="https://www.mediafire.com/folder/21dnwpngte6r3/Chang+apk+icons" class="button" target="_blank">
+     ICON CHANGE OF ANY ANDROID APK</a>
+    <a href="https://drive.google.com/drive/folders/1LsMj07NckO7kwbvNrH_etP97IBTXm8MN" class="button" target="_blank">
+     HOW TO HACK CARDING CARDS</a>
+    <a href="https://www.mediafire.com/file/nkps8yjkuxhyfnv/DARKWEB+ACCESS+IN+MOBILE+BY+MRISBRAND.zip/file" class="button" target="_blank">
+     HOW TO ACCESS DARK WEB</a>
+    <a href="https://www.mediafire.com/file/xe67xy9qgqulpvv/CREDIT+CARD+GENERATOR_1.0.0.apk/file" class="button" target="_blank">
+     CREDIT CARD GENERATOR</a>
+    <a href="https://drive.google.com/drive/folders/1fhw2ZWuHqNm-6skgoXNYSg47M4zxdkqI" class="button" target="_blank">
+     500+ PREMIUM ICONS</a>
+    <a href="https://drive.google.com/drive/folders/1y5PRTp9hnMB1z2PsUMk1zdVadiKSIJkV" class="button" target="_blank">
+     1000+ PREMIUM MEMES PACK</a>
+    <a href="https://drive.google.com/drive/folders/1BIqIc9UjXWPQfI-XbVxlqzjWyUXz2mVK" class="button" target="_blank">
+     ADOBE ALL PREACTIVATED SOFTWARES</a>
+    <a href="https://www.lostmypass.com/file-types/7z/" class="button" target="_blank">
+     PASSWORD CRACKING WEBSITE</a>
+    <a href="https://www.mediafire.com/file/kzlkau9yw2joq7m/social-engineering-the-art-of-human-hacking-pola.pdf/file" class="button" target="_blank">
+     FULL HACKING BOOK FREE</a>
+    <a href="https://www.hacksplaining.com" class="button" target="_blank">
+     HACK'S PLANINGS - FREE SECURITY TRAININGS FOR WEB DEVELOPERS</a>
+    <a href="https://www.remove.bg/" class="button" target="_blank">
+     IMAGE BACKGROUND REMOVER FREE</a>
+    <a href="https://dnschecker.org/reverse-image-search.php" class="button" target="_blank">
+     IMAGE FINDER TO FIND SIMILAR IMAGES TO RELATED IMAGE</a>
+    <a href="https://drive.google.com/drive/folders/1w1s7dyddloz8u2ASvbxYvXhGHnbxXKhJ" class="button" target="_blank">
+     2GB BIG PACK OF EDITING ASSETS</a>
+    <a href="https://www.mediafire.com/file/9cnzazzeb1d69j1/WHATSAPP_FULL_DP_%25F0%259F%2598%2588%25F0%259F%2592%2597_1.0.apk/file" class="button" target="_blank">
+     WATHSAPP FULL DP APK</a>
+    <a href="https://www.mediafire.com/file/zsiwpmdh5hshuko/WHATSAPP_DPZ_WITH_FULL_HEAVY_EDITOR_BUNDLE_%2528PROXARMY%2529.zip/file" class="button" target="_blank">
+     300+ DPZ WITHOUT NAMES &amp; EDIT APK</a>
+    <a href="https://whatsapp.com/channel/0029Vb7S2YT4IBhKMBPycS1e" class="button" target="_blank">MORE TOOLS</a>
+    <a href="https://mrisbrand-network-six.vercel.app/" class="button" target="_blank">OUR NETWORK</a>
+      <button id="logout" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+<script>
+  const CORRECT_PASSWORD = "MRISBRAND13"; // change to your real password
+
+  function checkPassword() {
+    const input = document.getElementById("pass").value;
+    const error = document.getElementById("error");
+    if (input === CORRECT_PASSWORD) {
+      document.getElementById("lockscreen").style.display = "none";
+      document.getElementById("toolkit").style.display = "block";
+      error.textContent = "";
+    } else {
+      error.textContent = "Incorrect password. Try again.";
+    }
+  }
+
+  function logout() {
+    document.getElementById("toolkit").style.display = "none";
+    document.getElementById("lockscreen").style.display = "block";
+    document.getElementById("pass").value = "";
+  }
+</script>
+</body>
+</html>
